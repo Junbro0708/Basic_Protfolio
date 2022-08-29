@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainColor: rgba(7, 30, 34, 1);
+  --subColor: rgba(14, 60, 68, 1);
+  --subColor2: rgba(29, 120, 116, 1);
+  --otherColor: #F4C095;
+  --otherColor2: #EE2E31;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  background: rgb(7, 30, 34);
+  background: linear-gradient(180deg, rgba(7, 30, 34, 1) 30%, rgba(14, 60, 68, 1) 65%, rgba(29, 120, 116, 1) 100%);
+  padding: 20% 5%;
+}
+/* MOBILE */
+@media (min-width:300px) {
+  /* HEADER */
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: whitesmoke;
+    row-gap: 15px;
+
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header > p {
+    padding: 2% 0;
+  }
+
+  header nav>ul {
+    display: none;
+  }
+
+  header details {
+    position: absolute;
+    top: -25%;
+    right: 2%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  header summary {
+    list-style: none;
+    width: fit-content;
+  }
+
+  header details ul {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: -1vh;
+    right: 10vw;
+    width: 70vw;
+    column-gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  header details a {
+    font-size: 12px;
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+
+  header details a:hover {
+    text-decoration: underline;
+  }
+
+  header>ul {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-bottom: 5vh;
+  }
+
+  header ul li {
+    list-style-type: none;
+  }
+
+  header>ul a {
+    text-decoration: none;
+    font-size: 28px;
+    color: whitesmoke;
+    transition: .4s;
+    cursor: pointer;
+  }
+
+  header>ul a:hover {
+    color: var(--subColor2);
+  }
+
+  /* MAIN */
+  main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+
+  main>section {
+    background-color: white;
+    padding: 10%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+
+  main>section>h2 {
+    color: var(--mainColor);
+  }
+
+  main h2>span {
+    color: var(--subColor2);
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  /* ABOUT */
+  .about figure {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+
+  .about figure img {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .about figcaption {
+    display: flex;
+    flex-direction: column;
+    color: var(--mainColor);
+    row-gap: 3vh;
+  }
+
+  .about figcaption p {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  /* PROJECT */
+  .projects img {
+    width: 100%;
+  }
+
+  .projects article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+
+  .projects figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .projects figcaption h4 {
+    color: var(--mainColor);
+  }
+
+  .projects ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .projects li {
+    list-style-type: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--subColor);
+  }
+
+  /* WORK & EDUCATION */
+  .work article,
+  .education article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+
+  .work time,
+  .education time {
+    color: var(--subColor2);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .work h3,
+  .education h3 {
+    color: var(--mainColor);
+    font-size: 18px;
+  }
+
+  .work p,
+  .education p {
+    padding-top: 3vh;
+    color: var(--subColor);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .education>article>section {
+    border-top: 1px solid var(--subColor2);
+    padding-top: 5vh;
+  }
+
+  .education>article>section:nth-child(1) {
+    border: none;
+    padding-top: 0;
+  }
+
+  /* LANGUAGE */
+  .language article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+  }
+
+  .language section {
+    display: flex;
+    column-gap: 3vh;
+    align-items: baseline;
+  }
+
+  .language section h3 {
+    color: var(--subColor);
+    font-size: 18px;
+  }
+
+  .language section p {
+    color: var(--subColor2);
+    font-size: 14px;
+  }
+
+  /* SOCIAL */
+  .social ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+
+  .social ul li {
+    list-style-type: none;
+  }
+
+  .social ul a {
+    text-decoration: none;
+    color: var(--subColor);
+    display: flex;
+    align-items: center;
+    column-gap: 3vh;
+  }
+
+  .social a i {
+    width: 2.5vh;
+    height: 2.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 1px solid var(--subColor);
+    padding: 5%;
+    border-radius: 50%;
+  }
+
+  .social a span {
+    color: var(--subColor2);
+    font-size: 16px;
+  }
+  .social a:hover span{
+    text-decoration: underline;
+  }
+  /* CONTACT */
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+  }
+
+  .contact form input,
+  textarea {
+    padding: 5%;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  textarea {
+    resize: none;
+    height: 15vh;
+  }
+
+  .contact form [type="submit"] {
+    background-color: var(--subColor2);
+    width: 50%;
+    border-radius: 20px;
+    color: whitesmoke;
+    transition: .4s;
+    font-style: normal;
+    cursor: pointer;
+  }
+
+  .contact form [type="submit"]:hover {
+    background-color: var(--subColor);
+  }
+
+  /* FOOTER */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5vh;
+    padding-top: 5vh;
+    overflow: hidden;
+  }
+
+  footer aside {
+    width: 8vh;
+    height: 8vh;
+    background-image: url("/img/train.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    animation-name: run;
+    animation-play-state: running;
+    animation-timing-function: ease;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+
+  footer span {
+    color: whitesmoke;
+    font-weight: 300;
+    font-size: 13px;
+  }
+
+  footer ul {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+  }
+
+  footer ul li {
+    list-style-type: none;
+  }
+
+  footer ul a {
+    text-decoration: none;
+    font-size: 28px;
+    color: whitesmoke;
+    transition: .4s;
+    cursor: pointer;
+  }
+
+  footer ul a:hover {
+    color: var(--mainColor);
+  }
+}
+/* TABLET */
+@media (min-width:700px) {
+  body{
+    padding: 15% 5%;
+
+  }
+  /* HEADER */
+  header h1 {
+    width: 80%;
+    font-size: 62px;
+    padding-top: 7%;
+    letter-spacing: 4px;
+  }
+  header details{
+    top: -20%;
+    font-size: 50px;
+  }
+  header > p {
+    padding-top: 3%;
+    padding-bottom: 5%;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  header details ul{
+    column-gap: 30px;
+    right: 10vw;
+  }
+  header details a{
+    font-size: 24px;
+  }
+  header>ul a{
+    font-size: 60px;
+  }
+  /* MAIN */
+  main>section{
+    padding: 10% 8%;
+  }
+  main>section>h2{
+    font-size: 40px;
+  }
+  .about figcaption{
+    row-gap: 40px;
+  }
+  .about figcaption p{
+    font-size: 24px;
+  }
+  .projects figcaption h4{
+    font-size: 36px;
+  }
+  .projects li{
+    font-size: 24px;
+  }
+  .projects figcaption{
+    row-gap: 4vh;
+  }
+  .projects ul{
+    row-gap: 3vh;
+  }
+  .work time,
+  .education time {
+    font-size: 30px;
+  }
+  .work h3,
+  .education h3 {
+    font-size: 36px;
+  }
+  .work p,
+  .education p {
+    font-size: 24px;
+    line-height: 1.8;
+  }
+  .language section h3{
+    font-size: 36px;
+  }
+  .language section p{
+    font-size: 24px;
+  }
+  .social a i{
+    padding: 3%;
+    font-size: 40px;
+    border: 2px solid var(--subColor);
+  }
+  .social a span{
+    font-size: 24px;
+  }
+  .contact form input,
+  textarea {
+    font-size: 21px;
+  }
+  footer span{
+    font-size: 21px;
+  }
+  footer ul a{
+    font-size: 60px;
+  }
+}
+/* DESKTOP */
+@media (min-width:1000px) {
+  body{
+    padding: 5% 10%;
+  }
+  /* HEADER */
+  header h1 {
+    width: 80%;
+    font-size: 50px;
+    padding-top: 3%;
+    letter-spacing: 3px;
+  }
+  header > p {
+    font-size: 16px;
+    padding-top: 1%;
+    padding-bottom: 2%;
+  }
+  header nav>ul {
+    display: flex;
+    column-gap: 30px;
+  }
+  nav ul a{
+    color: whitesmoke;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav ul a:hover{
+    text-decoration: underline;
+  }
+  header details{
+    display: none;
+  }
+  header>ul {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding-bottom: 6%;
+  }
+  header ul li {
+    list-style-type: none;
+  }
+  header>ul a {
+    text-decoration: none;
+    font-size: 30px;
+    color: whitesmoke;
+    transition: .4s;
+  }
+  main>section {
+    padding: 5%;
+    border-radius: 5px;
+  }
+  main>section h2{
+    font-size: 30px;
+  }
+  .about > article > figure{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+  }
+  .about figure img{
+    width: 35%;
+    height: 21%;
+  }
+  .about figcaption{
+    width: 60%;
+  }
+  .about figcaption p{
+    font-size: 16px;
+  }
+  .projects > article{
+    display: flex;
+    flex-direction: row;
+  }
+  .projects figcaption{
+    justify-content: center;
+    row-gap: 18px;
+  }
+  .projects ul{
+    row-gap: 15px;
+  }
+  .projects figure h4{
+    font-size: 22px;
+  }
+  .projects figure li{
+    font-size: 16px;
+  }
+  .projects a img{
+    transition: .4s;
+  }
+  .projects a:hover img{
+    transform: scale(1.05);
+  }
+  .work time {
+    font-size: 18px;
+  }
+  .work h3{
+    font-size: 24px;
+  }
+  .work p,
+  .education p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .education > article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .education time{
+    font-size: 14px;
+  }
+  .education > article section{
+    width: 23%;
+  }
+  .education h3{
+    font-size: 18px;
+  }
+  .education>article>section {
+    border-top: none;
+    padding-top: 0;
+  }
+  .education>article>section:nth-child(4) {
+    border: none;
+  }
+  .language > article{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+  }
+  .language > article > section{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+  .language section h3{
+    font-size: 18px;
+  }
+  .language section p{
+    font-size: 14px;
+  }
+  .social ul{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5%;
+  }
+  .social ul li{
+    width: 18%;
+  }
+  .social a i{
+    padding: 4%;
+    font-size: 20px;
+    border: 1px solid var(--subColor);
+  }
+  .social a span{
+    font-size: 14px;
+  }
+  .contact form input,
+  textarea {
+    padding: 1%;
+    font-size: 14px;
+    border-radius: 2px;
+  }
+  .contact form [type="submit"]{
+    padding: 1% 2%;
+    width: fit-content;
+  }
+  footer span{
+    font-size: 14px;
+  }
+  footer ul {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+  }
+  footer ul a {
+    text-decoration: none;
+    font-size: 30px;
+    color: whitesmoke;
+    transition: .4s;
+  }
+  footer aside{
+    cursor: pointer;
+  }
+  footer aside:hover{
+    animation-play-state:paused;
+  }
+}
+@keyframes run {
+  from {
+    transform: translateX(-60vw);
+  }
+
+  to {
+    transform: translateX(60vw);
+  }
+}
